@@ -16,7 +16,7 @@ gulp.task('scripts', function() {
 });
 
 gulp.task('image', function() {
-    return gulp.src('src/images/*')
+    return gulp.src('.*')
     .pipe(imagemin({ progressive: true }))
     .pipe(gulp.dest('images'));
 });

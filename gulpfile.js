@@ -3,6 +3,7 @@ var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var imagemin = require('gulp-imagemin');
 var inlineCss = require('gulp-inline-css');
+var minifyHTML = require('gulp-minify-html');
 
 // Concatenate & Minify JS
 gulp.task('scripts', function() {
@@ -24,6 +25,12 @@ gulp.task('inline', function() {
     return gulp.src('./*.html')
         .pipe(inlineCss())
         .pipe(gulp.dest('build/'));
+});
+
+gulp.task('minify-html', function() {
+  return gulp.src('src/*.html')
+    .pipe(minifyHTML({ empty: true }))
+    .pipe(gulp.dest('dist'));
 });
 
 // Default Task

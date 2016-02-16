@@ -28,9 +28,9 @@ gulp.task('inline', function() {
 });
 
 gulp.task('minify', function() {
-  return gulp.src('src/*.html')
+  return gulp.src('./*.html')
     .pipe(htmlmin({collapseWhitespace: true}))
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('./build'))
 });
 
 // Default Task

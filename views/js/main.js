@@ -452,15 +452,16 @@ var resizePizzas = function(size) {
   function changePizzaSizes(size) {
     console.log('======CHANGING SIZE======')
     //replaced document.querySelectorAll(".randomPizzaContainer").length with 3
+    //using 3 now because there are only 3 pizza sizes to cycle
+    var items = document.querySelectorAll(".randomPizzaContainer");
     for (var i = 0; i < 3; i++) {
-      console.log('i =' + i);
-
-      console.log('length = ' + document.querySelectorAll(".randomPizzaContainer").length);
-      var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[i], size);
-      console.log('dx: ' + dx);
-      var newwidth = (document.querySelectorAll(".randomPizzaContainer")[i].offsetWidth + dx) + 'px';
-      document.querySelectorAll(".randomPizzaContainer")[i].style.width = newwidth;
-      console.log('newwidth = ' + newwidth);
+      var dx = determineDx(items[i], size);
+      console.log('first dx = ' + dx);
+      var newwidth = (items[i].offsetWidth + dx) + 'px';
+      console.log('second newwidth =' + newwidth);
+    }
+    for (var i = 0; i < items.length; i++) {
+      items[i].style.width = newwidth;
     }
   }
   changePizzaSizes(size);

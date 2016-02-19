@@ -529,6 +529,9 @@ function updatePositions() {
 window.addEventListener('scroll', updatePositions);
 
 // Generates the sliding pizzas when the page loads.
+var intViewportHeight = window.innerHeight;
+console.log('inner height = ' + intViewportHeight);
+
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;

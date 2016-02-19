@@ -29,16 +29,16 @@ This is your handy gulp guide.
 
 ##1.Uglify scripts
 to Concatenate and uglify javascript files type
-gulp
+´gulp´
 
 ##2.Compress images
 To compress image files run
-gulp image
+´gulp image´
 
 ##3.Inline HTML
 To inline html for final use type
-gulp inline
+´gulp inline´
 
 ##4.Minify
 to minify type
-gulp minify
+´gulp minify´

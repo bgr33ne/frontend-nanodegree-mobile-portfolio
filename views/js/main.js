@@ -530,12 +530,15 @@ window.addEventListener('scroll', updatePositions);
 
 // Generates the sliding pizzas when the page loads.
 var intViewportHeight = window.innerHeight;
+// number of pizzas to generate based on browser window height
+var newPizzas = intViewportHeight / 30;
+
 console.log('inner height = ' + intViewportHeight);
 
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-  for (var i = 0; i < 200; i++) {
+  for (var i = 0; i < newPizzas; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";

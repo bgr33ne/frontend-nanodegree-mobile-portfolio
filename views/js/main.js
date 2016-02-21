@@ -453,8 +453,8 @@ var resizePizzas = function(size) {
     var items = document.getElementsByClassName("randomPizzaContainer");
     var dx = determineDx(items, size);
     var newwidth = (items.offsetWidth + dx) + 'px';
-
-    for (var i = 0; i < items.length; i++) {
+    var len = items.length;
+    for (var i = 0; i < len; i++) {
       items[i].style.width = newwidth;
     }
   }
@@ -505,11 +505,12 @@ function updatePositions() {
 
   var items = document.querySelectorAll('.mover');
   var phases = [];
+  var phase;
   for (var i = 0; i < 5; i++) {
     phases[i] = Math.sin((document.body.scrollTop / 1250) + i);
   }
   for (var i = 0; i < items.length; i++) {
-    var phase = phases[i % 5];
+    phase = phases[i % 5];
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
